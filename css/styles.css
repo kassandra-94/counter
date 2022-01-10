@@ -50,10 +50,9 @@ button{
              -25px -25px 80px #f7ffff; 
     margin-right:3em;     
 }
- .iconPlus:active{
-   background-color: #81F499;
+.iconPlus:active {
+color: chartreuse;
 }
-
 .resetButton{ 
     height: 5em;
 }
