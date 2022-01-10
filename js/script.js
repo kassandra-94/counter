@@ -19,14 +19,12 @@ displayer.innerHTML='0';
 displayer.className= 'displayer';
 
 
-//creating reset button
+//creating  buttons and 
 const resetButton= document.createElement('button');
 resetButton.className= 'resetButton';
 const resetText = document.createElement('h3');
 resetText.innerHTML='RESET';
 resetText.className= 'resetText';
-
-
 
 
 const divButtons = document.createElement('div');
@@ -57,15 +55,11 @@ plusButton.insertAdjacentHTML('afterbegin', '<img src="https://img.icons8.com/io
 minusButton.insertAdjacentHTML('afterbegin', '<img src="https://img.icons8.com/ios/70/CF1259/minus--v1.png"/>');
 
 
-
-
-
-
-
-
 // set the function to raise the number on the counter when mouse is clicked
 
+
 // set the function to decrease the number on the counter when mouse is clicked
+
 
 //set the function to reset the  number on the counter when reset button is clicked 
 
