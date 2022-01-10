@@ -31,6 +31,13 @@ const divButtons = document.createElement('div');
 const plusButton = document.createElement('button');
 const minusButton = document.createElement('button');
 
+const iconPlus = document.createElement('img');
+const iconMinus = document.createElement('img');
+
+iconPlus.src= 'https://img.icons8.com/ios/50/FFF/plus--v1.png';
+iconMinus.src='https://img.icons8.com/ios/50/CF1259/minus--v1.png';
+iconMinus.className='iconMinus';
+iconPlus.className='iconPlus';
 
 const iconsApp = document.createElement('h4');
 iconsApp.innerHTML= 'App icon by <a href="https://icons8.it">icons8</a>';
@@ -51,8 +58,8 @@ resetButton.appendChild(resetText);
 
 
 //inserting icon plus and minus 
-plusButton.insertAdjacentHTML('afterbegin', '<img src="https://img.icons8.com/ios/70/CF1259/plus--v1.png"/>');
-minusButton.insertAdjacentHTML('afterbegin', '<img src="https://img.icons8.com/ios/70/CF1259/minus--v1.png"/>');
+plusButton.appendChild(iconPlus);
+minusButton.appendChild(iconMinus);
 
 
 // set the function to raise the number on the counter when mouse is clicked
