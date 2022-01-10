@@ -5,4 +5,68 @@
 body{
     background-color: #D1D8EC;
     font-family: 'Bebas Neue';
+    overflow-y: scroll;
+    padding-top: 4em;
+    display: flex;
+   
 }
+.mainDiv{
+    background: #D1D8EC;
+    box-shadow:  25px 25px 60px #9095a3,
+             -25px -25px 60px #f7ffff;
+    border-radius: 3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30em;
+    margin-left: auto;
+}
+.displayer{
+    text-align: center;
+    font-size: 10em;
+}
+.firstTitle{
+    text-align: center;
+    font-size: 5em;
+    padding-top: 1em;
+    padding-bottom: 0.5em;
+    color: #2B2118;
+}
+div{
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+   align-items: center;
+}
+button{
+    height: 14em;
+    width: 14em;
+    border-radius: 40px;
+    background: #D1D8EC;
+    box-shadow:  25px 25px 80px #9095a3,
+             -25px -25px 80px #f7ffff; 
+    margin:3em;     
+}
+.resetButton{ 
+    height: 7em;
+}
+.resetText{
+    color: #CF1259;
+    font-size: 3em;
+
+}
+@media (min-width: 768px) { 
+    .mainPage{
+
+    }
+ }
+
+@media (min-width: 1024px) {  
+    .mainPage{
+        height: 45em;
+       margin: auto;
+    }
+}
+    
