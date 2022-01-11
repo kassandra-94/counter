@@ -30,13 +30,14 @@ resetText.className= 'resetText';
 
 const divButtons = document.createElement('div');
 const plusButton = document.createElement('button');
+plusButton.className='plusButton';
 const minusButton = document.createElement('button');
 
 const iconPlus = document.createElement('img');
 const iconMinus = document.createElement('img');
 
-iconPlus.src= '../asset/ikonate/add.svg';
-plusButton.className='plusButton';
+//iconPlus.src= "https://img.icons8.com/ios/50/000000/plus--v1.png";
+//iconPlus.className='iconPlus';
 
 iconMinus.src= '../asset/ikonate/remove.svg';
 iconMinus.className='iconMinus';
@@ -51,20 +52,20 @@ body.appendChild(mainDiv);
 mainDiv.appendChild(firstTitle);
 mainDiv.appendChild(displayer);
 mainDiv.appendChild(divButtons);
-mainDiv.appendChild(iconsApp);
 mainDiv.appendChild(resetButton);
+mainDiv.appendChild(iconsApp);
 
 divButtons.appendChild(plusButton);
 divButtons.appendChild(minusButton);
 resetButton.appendChild(resetText);
 
 //inserting icon plus and minus 
-plusButton.appendChild(iconPlus);
+plusButton.innerHTML= '<img src="https://img.icons8.com/ios/50/000000/add--v1.png"/>';
 minusButton.appendChild(iconMinus);
 
-displayer.innerText=0;
-// set the counter to zero
 
+// set the counter to zero
+displayer.innerText=0;
 
 
 // set the function to raise the number on the counter when mouse is clicked
@@ -72,6 +73,7 @@ plusButton.onclick= function(){
 if( displayer.innerText==0 || displayer.innerText <= -1 || displayer.innerText>= 1) {
     return displayer.innerText++;
 } 
+
 }
 
 // set the function to decrease the number on the counter when mouse is clicked
@@ -79,10 +81,11 @@ minusButton.onclick = function(){
     if(displayer.innerText== 0 || displayer.innerText <= -1 || displayer.innerText>= 1){
         return displayer.innerText--;
     }
+   return iconMinus.style.stroke='#CF1259';
+    
 }
 
 //set the function to reset the  number on the counter when reset button is clicked 
-
 resetButton.onclick = function(){
     return displayer.innerText= 0;
 }
