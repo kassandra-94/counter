@@ -50,19 +50,21 @@ button{
              -25px -25px 80px #f7ffff; 
     margin-right:3em;     
 }
-.iconPlus:active {
-color: chartreuse;
+.plusButton:active {
+background-color: chartreuse;
+fill: brown;
+color: cornsilk;
 }
 .resetButton{ 
     height: 5em;
 }
 .resetText{
-    color: #CF1259;
+    color: #541388;
     font-size: 1.5em;
 
 }
 .resetText:active{
-    color: blue;
+    color: #CF1259;
 }
 
 /*TABLET VERSION*/
