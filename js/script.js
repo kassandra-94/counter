@@ -33,13 +33,13 @@ const plusButton = document.createElement('button');
 plusButton.className='plusButton';
 const minusButton = document.createElement('button');
 
-const iconPlus = document.createElement('img');
+const iconPlus = document.createElement('a');
 const iconMinus = document.createElement('img');
 
-//iconPlus.src= "https://img.icons8.com/ios/50/000000/plus--v1.png";
+iconPlus.href= "https://img.icons8.com/ios/50/000000/plus--v1.png";
 //iconPlus.className='iconPlus';
 
-iconMinus.href= '../asset/ikonate/remove.svg';
+iconMinus.src= '../asset/ikonate/remove.svg';
 iconMinus.className='iconMinus';
 
 const iconsApp = document.createElement('h4');
@@ -55,12 +55,14 @@ mainDiv.appendChild(divButtons);
 mainDiv.appendChild(resetButton);
 mainDiv.appendChild(iconsApp);
 
-divButtons.appendChild(plusButton);
+divButtons.appendChild(iconPlus);
+iconPlus.appendChild(plusButton);
+//divButtons.appendChild(plusButton);
 divButtons.appendChild(minusButton);
 resetButton.appendChild(resetText);
 
 //inserting icon plus and minus 
-plusButton.innerHTML= '<img src="https://img.icons8.com/ios/50/000000/add--v1.png"/>';
+//plusButton.innerHTML= '<img src="https://img.icons8.com/ios/50/000000/add--v1.png"/>';
 minusButton.appendChild(iconMinus);
 
 
@@ -73,7 +75,7 @@ plusButton.onclick= function(){
 if( displayer.innerText==0 || displayer.innerText <= -1 || displayer.innerText>= 1) {
     return displayer.innerText++;
 } 
- return this.innerHTML= '<img src="https://img.icons8.com/ios/50/CF1259/add--v1.png"/>';
+ //return this.innerHTML= '<img src="https://img.icons8.com/ios/50/CF1259/add--v1.png"/>';
 }
 
 // set the function to decrease the number on the counter when mouse is clicked
