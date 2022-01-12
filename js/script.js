@@ -39,7 +39,7 @@ const iconMinus = document.createElement('img');
 //iconPlus.src= "https://img.icons8.com/ios/50/000000/plus--v1.png";
 //iconPlus.className='iconPlus';
 
-iconMinus.src= '../asset/ikonate/remove.svg';
+iconMinus.href= '../asset/ikonate/remove.svg';
 iconMinus.className='iconMinus';
 
 const iconsApp = document.createElement('h4');
@@ -73,7 +73,7 @@ plusButton.onclick= function(){
 if( displayer.innerText==0 || displayer.innerText <= -1 || displayer.innerText>= 1) {
     return displayer.innerText++;
 } 
-
+ return this.innerHTML= '<img src="https://img.icons8.com/ios/50/CF1259/add--v1.png"/>';
 }
 
 // set the function to decrease the number on the counter when mouse is clicked
