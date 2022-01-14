@@ -10,9 +10,9 @@ mainDiv.className = 'mainDiv';
 
 
 const firstTitle= document.createElement('h2');
-firstTitle.innerHTML="Let 's keep track!";
+firstTitle.innerHTML="Let 's keep";
 firstTitle.className= 'firstTitle';
-
+firstTitle.insertAdjacentHTML('beforeend', '<em>track!</em>');
 // set the counter to zero
 let displayer = document.createElement('h1');
 let displayStart = displayer.innerText;
@@ -29,21 +29,16 @@ resetText.className= 'resetText';
 
 
 const divButtons = document.createElement('div');
+divButtons.className= 'divButtons';
+
 const plusButton = document.createElement('button');
 plusButton.className='plusButton';
 const minusButton = document.createElement('button');
+minusButton.className= 'minusButton';
 
-const iconPlus = document.createElement('img');
-const iconMinus = document.createElement('img');
-
-iconPlus.src= '../asset/ikonate/add.svg';
-//iconPlus.className='iconPlus';
-
-iconMinus.src= '../asset/ikonate/remove.svg';
-iconMinus.className='iconMinus';
 
 const iconsApp = document.createElement('h4');
-iconsApp.innerHTML= 'App icon by <a href="https://ikonate.com" target=_blank">ikonate</a>';
+iconsApp.innerHTML= 'App icon by <a href="https://icons8.it" target=_blank">icons8</a>';
 
  
 // append children to the document.body
@@ -55,13 +50,12 @@ mainDiv.appendChild(divButtons);
 mainDiv.appendChild(resetButton);
 mainDiv.appendChild(iconsApp);
 
-divButtons.appendChild(plusButton);
 divButtons.appendChild(minusButton);
+divButtons.appendChild(plusButton);
+//divButtons.appendChild(resetButton);
 resetButton.appendChild(resetText);
 
-//inserting icon plus and minus 
-plusButton.appendChild(iconPlus);
-minusButton.appendChild(iconMinus);
+mainDiv.appendChild(iconsApp);
 
 
 // set the counter to zero
@@ -75,7 +69,7 @@ if( displayer.innerText==0 || displayer.innerText <= -1 || displayer.innerText>=
 } 
  //return this.innerHTML= '<img src="https://img.icons8.com/ios/50/CF1259/add--v1.png"/>';
 }
-// set the function to decrease the number on the counter when mouse is clicked
+
 minusButton.onclick = function(){
     if(displayer.innerText== 0 || displayer.innerText <= -1 || displayer.innerText>= 1){
         return displayer.innerText--;
