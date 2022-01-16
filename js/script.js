@@ -10,15 +10,16 @@ mainDiv.className = 'mainDiv';
 
 
 const firstTitle= document.createElement('h2');
-firstTitle.innerHTML="Let 's keep";
+firstTitle.innerHTML="Let's ";
 firstTitle.className= 'firstTitle';
-firstTitle.insertAdjacentHTML('beforeend', '<em>track!</em>');
+firstTitle.insertAdjacentHTML('beforeend', '<em>count</em>');
+
+
+
 // set the counter to zero
 let displayer = document.createElement('h1');
-let displayStart = displayer.innerText;
-//displayer.innerText=0;
-displayer.className= 'displayer';
-
+displayer.innerText=0;
+displayer.className = 'displayer';
 
 //creating  buttons and 
 const resetButton= document.createElement('button');
@@ -46,20 +47,15 @@ body.appendChild(mainDiv);
 
 mainDiv.appendChild(firstTitle);
 mainDiv.appendChild(displayer);
+
 mainDiv.appendChild(divButtons);
 mainDiv.appendChild(resetButton);
 mainDiv.appendChild(iconsApp);
 
 divButtons.appendChild(minusButton);
 divButtons.appendChild(plusButton);
-//divButtons.appendChild(resetButton);
+
 resetButton.appendChild(resetText);
-
-mainDiv.appendChild(iconsApp);
-
-
-// set the counter to zero
-displayer.innerText=0;
 
 
 // set the function to raise the number on the counter when mouse is clicked
@@ -80,3 +76,5 @@ minusButton.onclick = function(){
 resetButton.onclick = function(){
     return displayer.innerText= 0;
 }
+
+
