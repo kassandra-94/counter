@@ -3,8 +3,8 @@
     margin:0;
 }
 body{
-    background-color: #D1D8EC;
-    font-family: 'Poppins';
+    background-color: #FAFFFD;
+    font-family: sans-serif;
     overflow-y: scroll;
     padding-top: 4em;
     display: flex;
@@ -25,21 +25,22 @@ body{
 }
 
 em{
-    color:#4C9226 ;
+    color:#FA824C ;
     letter-spacing:0.00000rem;
     line-height: ;
 }
 .displayer{
     text-align: center;
     font-size: 11em;
-    color: #2A2C24;
+    color: #031D44;
 }
 .firstTitle{
     text-align: center;
     font-size: 3.5em;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
-    color: #2B2118;
+    color: #5c1d9e;
+   
 }
 div{
     margin-left: auto;
@@ -158,10 +159,12 @@ h4{
         line-height:1em ;
     }
     em{
+        font-family: Arial, Helvetica, sans-serif;
         letter-spacing: ;
         font-size: em;
     }
     .displayer{
+        font-family: monospace;
         text-align: center;
         font-size: 13em;
     }
