@@ -127,6 +127,7 @@ h4> a{
     }
     .resetButton{
         width: 14em;
+        height: 5em;
     }
     .resetText{
         font-size: 2.2em;
