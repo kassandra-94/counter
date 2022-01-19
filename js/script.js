@@ -2,36 +2,34 @@
 // shortcuts to document.body
 const body = document.body;
 
-
-
-//creating elements: first title, displayer, minusButtons, plusButton and a div to contain them
+//1) CREATION OF ELEMENT
+//creation mainDiv 
 const mainDiv= document.createElement('div');
 mainDiv.className = 'mainDiv';
 
+//creation title
+const title= document.createElement('h2');
+title.innerHTML="Let's ";
+title.className= 'title';
+title.insertAdjacentHTML('beforeend', '<em>count</em>');
 
-const firstTitle= document.createElement('h2');
-firstTitle.innerHTML="Let's ";
-firstTitle.className= 'firstTitle';
-firstTitle.insertAdjacentHTML('beforeend', '<em>count</em>');
+// creation the display and set it to zero
+let display = document.createElement('h1');
+display.innerText=0;
+display.className = 'display';
 
-
-
-// set the counter to zero
-let displayer = document.createElement('h1');
-displayer.innerText=0;
-displayer.className = 'displayer';
-
-//creating  buttons and icons
+//creation reset button 
 const resetButton= document.createElement('button');
 resetButton.className= 'resetButton';
 const resetText = document.createElement('h3');
 resetText.innerHTML='RESET';
 resetText.className= 'resetText';
 
-
+//creation of div parent
 const divButtons = document.createElement('div');
 divButtons.className= 'divButtons';
 
+//creation of minus and plus buttons and icons
 const plusButton = document.createElement('button');
 plusButton.className='plusButton';
 const minusButton = document.createElement('button');
@@ -42,89 +40,88 @@ plusIcon.className= 'plusIcon';
 let minusIcon = document.createElement('img');
 minusIcon.className= 'minusIcon';
 
-// setting default icon 
-plusIcon.setAttribute('src',"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4Igp3aWR0aD0iNTAiIGhlaWdodD0iNTAiCnZpZXdCb3g9IjAgMCAxNzIgMTcyIgpzdHlsZT0iIGZpbGw6IzAwMDAwMDsiPjxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0ibm9uemVybyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIHN0cm9rZS1saW5lY2FwPSJidXR0IiBzdHJva2UtbGluZWpvaW49Im1pdGVyIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS1kYXNoYXJyYXk9IiIgc3Ryb2tlLWRhc2hvZmZzZXQ9IjAiIGZvbnQtZmFtaWx5PSJub25lIiBmb250LXdlaWdodD0ibm9uZSIgZm9udC1zaXplPSJub25lIiB0ZXh0LWFuY2hvcj0ibm9uZSIgc3R5bGU9Im1peC1ibGVuZC1tb2RlOiBub3JtYWwiPjxwYXRoIGQ9Ik0wLDE3MnYtMTcyaDE3MnYxNzJ6IiBmaWxsPSJub25lIj48L3BhdGg+PGcgZmlsbD0iIzdhNjg4ZCI+PHBhdGggZD0iTTg2LDYuODhjLTQzLjY1NjAzLDAgLTc5LjEyLDM1LjQ2Mzk3IC03OS4xMiw3OS4xMmMwLDQzLjY1NjAzIDM1LjQ2Mzk3LDc5LjEyIDc5LjEyLDc5LjEyYzQzLjY1NjAzLDAgNzkuMTIsLTM1LjQ2Mzk3IDc5LjEyLC03OS4xMmMwLC00My42NTYwMyAtMzUuNDYzOTcsLTc5LjEyIC03OS4xMiwtNzkuMTJ6TTg2LDEzLjc2YzM5LjkzNzc5LDAgNzIuMjQsMzIuMzAyMjEgNzIuMjQsNzIuMjRjMCwzOS45Mzc3OSAtMzIuMzAyMjEsNzIuMjQgLTcyLjI0LDcyLjI0Yy0zOS45Mzc3OSwwIC03Mi4yNCwtMzIuMzAyMjEgLTcyLjI0LC03Mi4yNGMwLC0zOS45Mzc3OSAzMi4zMDIyMSwtNzIuMjQgNzIuMjQsLTcyLjI0ek04Mi41Niw0NC43MnYzNy44NGgtMzcuODR2Ni44OGgzNy44NHYzNy44NGg2Ljg4di0zNy44NGgzNy44NHYtNi44OGgtMzcuODR2LTM3Ljg0eiI+PC9wYXRoPjwvZz48L2c+PC9zdmc+");
-minusIcon.setAttribute('src',"data:image/png;base64,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");
+//setting default color for icons
+plusIcon.setAttribute('src', "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAAAy0lEQVRoge2YQQrCMBREpwV7KK0nsL2RKJYeqZ7A6qEM+F2ICxdJs/h0bJm37SfzHyUwBBBCCCaF52HPS3NHgW1yyDBW52HvlVl6HQQAk8t/ZmrPSF8BAhJgIwE2EmAjATYS+BK6Q3a/CX3rVieiZS6rmM1FogDG/8C/LA8kC6DuABsJsJEAmxULGMYZ95jiFvvg9qwS+ra2l0WDfkJL222O14dHru+7UNdYzlx1GtxyV3wHFoIE2EiAjQTYSICNr0BeAczqS0IIsQzeB14jTg7KQxgAAAAASUVORK5CYII=");
+minusIcon.setAttribute('src',"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAAASUlEQVRoge3PsQ2AIBRFUaRgOmeyYCamo8EFICbG8GNyTvuad1MCAACAV47V0Os5dh55Uq42/Zp3H/magGgCogmIJgAAAAB+6gbexgQU++CPswAAAABJRU5ErkJggg==");
 
-let defaultColorPlusIcon = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4Igp3aWR0aD0iNTAiIGhlaWdodD0iNTAiCnZpZXdCb3g9IjAgMCAxNzIgMTcyIgpzdHlsZT0iIGZpbGw6IzAwMDAwMDsiPjxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0ibm9uemVybyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIHN0cm9rZS1saW5lY2FwPSJidXR0IiBzdHJva2UtbGluZWpvaW49Im1pdGVyIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS1kYXNoYXJyYXk9IiIgc3Ryb2tlLWRhc2hvZmZzZXQ9IjAiIGZvbnQtZmFtaWx5PSJub25lIiBmb250LXdlaWdodD0ibm9uZSIgZm9udC1zaXplPSJub25lIiB0ZXh0LWFuY2hvcj0ibm9uZSIgc3R5bGU9Im1peC1ibGVuZC1tb2RlOiBub3JtYWwiPjxwYXRoIGQ9Ik0wLDE3MnYtMTcyaDE3MnYxNzJ6IiBmaWxsPSJub25lIj48L3BhdGg+PGcgZmlsbD0iIzdhNjg4ZCI+PHBhdGggZD0iTTg2LDYuODhjLTQzLjY1NjAzLDAgLTc5LjEyLDM1LjQ2Mzk3IC03OS4xMiw3OS4xMmMwLDQzLjY1NjAzIDM1LjQ2Mzk3LDc5LjEyIDc5LjEyLDc5LjEyYzQzLjY1NjAzLDAgNzkuMTIsLTM1LjQ2Mzk3IDc5LjEyLC03OS4xMmMwLC00My42NTYwMyAtMzUuNDYzOTcsLTc5LjEyIC03OS4xMiwtNzkuMTJ6TTg2LDEzLjc2YzM5LjkzNzc5LDAgNzIuMjQsMzIuMzAyMjEgNzIuMjQsNzIuMjRjMCwzOS45Mzc3OSAtMzIuMzAyMjEsNzIuMjQgLTcyLjI0LDcyLjI0Yy0zOS45Mzc3OSwwIC03Mi4yNCwtMzIuMzAyMjEgLTcyLjI0LC03Mi4yNGMwLC0zOS45Mzc3OSAzMi4zMDIyMSwtNzIuMjQgNzIuMjQsLTcyLjI0ek04Mi41Niw0NC43MnYzNy44NGgtMzcuODR2Ni44OGgzNy44NHYzNy44NGg2Ljg4di0zNy44NGgzNy44NHYtNi44OGgtMzcuODR2LTM3Ljg0eiI+PC9wYXRoPjwvZz48L2c+PC9zdmc+";
-let activeColorPlusIcon = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4Igp3aWR0aD0iNTAiIGhlaWdodD0iNTAiCnZpZXdCb3g9IjAgMCAxNzIgMTcyIgpzdHlsZT0iIGZpbGw6IzAwMDAwMDsiPjxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0ibm9uemVybyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIHN0cm9rZS1saW5lY2FwPSJidXR0IiBzdHJva2UtbGluZWpvaW49Im1pdGVyIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS1kYXNoYXJyYXk9IiIgc3Ryb2tlLWRhc2hvZmZzZXQ9IjAiIGZvbnQtZmFtaWx5PSJub25lIiBmb250LXdlaWdodD0ibm9uZSIgZm9udC1zaXplPSJub25lIiB0ZXh0LWFuY2hvcj0ibm9uZSIgc3R5bGU9Im1peC1ibGVuZC1tb2RlOiBub3JtYWwiPjxwYXRoIGQ9Ik0wLDE3MnYtMTcyaDE3MnYxNzJ6IiBmaWxsPSJub25lIj48L3BhdGg+PGcgZmlsbD0iIzRjOTIyNiI+PHBhdGggZD0iTTg2LDYuODhjLTQzLjY1NjAzLDAgLTc5LjEyLDM1LjQ2Mzk3IC03OS4xMiw3OS4xMmMwLDQzLjY1NjAzIDM1LjQ2Mzk3LDc5LjEyIDc5LjEyLDc5LjEyYzQzLjY1NjAzLDAgNzkuMTIsLTM1LjQ2Mzk3IDc5LjEyLC03OS4xMmMwLC00My42NTYwMyAtMzUuNDYzOTcsLTc5LjEyIC03OS4xMiwtNzkuMTJ6TTg2LDEzLjc2YzM5LjkzNzc5LDAgNzIuMjQsMzIuMzAyMjEgNzIuMjQsNzIuMjRjMCwzOS45Mzc3OSAtMzIuMzAyMjEsNzIuMjQgLTcyLjI0LDcyLjI0Yy0zOS45Mzc3OSwwIC03Mi4yNCwtMzIuMzAyMjEgLTcyLjI0LC03Mi4yNGMwLC0zOS45Mzc3OSAzMi4zMDIyMSwtNzIuMjQgNzIuMjQsLTcyLjI0ek04Mi41Niw0NC43MnYzNy44NGgtMzcuODR2Ni44OGgzNy44NHYzNy44NGg2Ljg4di0zNy44NGgzNy44NHYtNi44OGgtMzcuODR2LTM3Ljg0eiI+PC9wYXRoPjwvZz48L2c+PC9zdmc+";
-let defaultColorMinusIcon = "data:image/png;base64,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";
-let activeColorMinusIcon = "data:image/png;base64,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";
+// storing icons colors in variables
+let defaultColorPlusIcon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAAAy0lEQVRoge2YQQrCMBREpwV7KK0nsL2RKJYeqZ7A6qEM+F2ICxdJs/h0bJm37SfzHyUwBBBCCCaF52HPS3NHgW1yyDBW52HvlVl6HQQAk8t/ZmrPSF8BAhJgIwE2EmAjATYS+BK6Q3a/CX3rVieiZS6rmM1FogDG/8C/LA8kC6DuABsJsJEAmxULGMYZ95jiFvvg9qwS+ra2l0WDfkJL222O14dHru+7UNdYzlx1GtxyV3wHFoIE2EiAjQTYSICNr0BeAczqS0IIsQzeB14jTg7KQxgAAAAASUVORK5CYII=";
+let activeColorPlusIcon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAAAxUlEQVRoge3Y0Q2CMBgE4INhOoTiBMoqOAvMghOIzmBYpr5o4kuhD5eekPteafr3QppcCpiZKVXMzS5DeAA4rCybxm4+sWbWrI0+1g4PAA1zIDtAcQ6g5gBqDqDmAGoO8HUeQna/aftAqxPJMpdZzEpJFsClP/AvhwcWCqDvgJoDqDmA2q4DTMVOse6e+kB7Vmn70MQqPehXjPXxdn09GXPZ70IxZ93YzbS5u74Dm+AAag6g5gBqDqDGDpBTALP6kpnZNrwB0lQcvwSGHrIAAAAASUVORK5CYII=";
+let defaultColorMinusIcon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAAASUlEQVRoge3PsQ2AIBRFUaRgOmeyYCamo8EFICbG8GNyTvuad1MCAACAV47V0Os5dh55Uq42/Zp3H/magGgCogmIJgAAAAB+6gbexgQU++CPswAAAABJRU5ErkJggg==";
+let activeColorMinusIcon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAAASklEQVRoge3PwQ2AIBREQaQYqrEWi6EWqqEZbABiYgw/JjPXvexLCQAAAF45VsNZy9h55Em7+vRr3n3kawKiCYgmIJoAAAAA+KkbcIYEFNLPAbQAAAAASUVORK5CYII=";
 
-
+//creation of icon's app reference
 const iconsApp = document.createElement('h4');
 iconsApp.innerHTML= 'App icon by <a href="https://icons8.it" target=_blank">icons8</a>';
 
- 
-// append children to document
+
+ //2) APPENDING ELEMENTS TO THEIR CLOSEST PARENT
 body.appendChild(mainDiv);
 
-// append children to mainDiv
-mainDiv.appendChild(firstTitle);
-mainDiv.appendChild(displayer);
+// appending children to mainDiv
+mainDiv.appendChild(title);
+mainDiv.appendChild(display);
 mainDiv.appendChild(divButtons);
 mainDiv.appendChild(resetButton);
 mainDiv.appendChild(iconsApp);
 
-// append children to divButtons
+// appending buttons to divButtons
 divButtons.appendChild(minusButton);
 divButtons.appendChild(plusButton);
 
-// append children to divButtons
+// appending icons to buttons
 plusButton.appendChild(plusIcon);
 minusButton.appendChild(minusIcon);
 
-//append children to reset button
+//appending text to reset button
 resetButton.appendChild(resetText);
 
 
-
-//set the function to reset the  number on the counter when reset button is clicked 
+//SETTING FUNCTIONS
+//set click event on reset button  
 resetButton.onclick = function(){
   let userChoice= confirm('Are you sure? There\'s no going back.');
  if (userChoice){
-  displayer.innerText= 0;
+  display.innerText= 0;
  }else {
   alert('That was close.');
  }
    }
-
-//divButtons.addEventListener('click', countClick)
+//setting event listeners to parent element of buttons( event delegation)
 divButtons.addEventListener('mousedown',changeTheIcon);
 divButtons.addEventListener('mouseup', setDefaultIcon);
 
-// event delegation 
+
 function changeTheIcon(event){
-     let target = event.target;     
+  let target = event.target;     
      
     while (target != divButtons){
-
-    if (target.className == 'plusButton'){
-      //raise number on display
-      if( displayer.innerText==0 || displayer.innerText <= -1 || displayer.innerText>= 1) { 
-        displayer.innerText++;
-       }
-       //change color icon of plusButton when clicked
-      if ( plusIcon.getAttribute('src') == defaultColorPlusIcon){
-        plusIcon.setAttribute('src', activeColorPlusIcon);
-       } 
-    } else if (target.className == 'minusButton'){
-        //decrese number on display
-      if(displayer.innerText== 0 || displayer.innerText <= -1 || displayer.innerText>= 1){
-        displayer.innerText--;
+      if (target.className == 'plusButton'){
+          //raise number on display
+          if( display.innerText==0 || display.innerText <= -1 || display.innerText>= 1) { 
+              display.innerText++;
+              }
+          //change color icon of plusButton when clicked
+          if ( plusIcon.getAttribute('src') == defaultColorPlusIcon){
+              plusIcon.setAttribute('src', activeColorPlusIcon);
+              } 
+      } else if (target.className == 'minusButton'){
+          //decrese number on display
+          if(display.innerText== 0 || display.innerText <= -1 || display.innerText>= 1){
+          display.innerText--;
+              }
+          //change color icon of mminusButton when clicked
+          if (minusIcon.getAttribute('src') == defaultColorMinusIcon){
+          minusIcon.setAttribute('src',activeColorMinusIcon);
+              }
+            }
+          //debug for nested elements
+      target = target.parentNode;
     }
-      //change color icon of mminusButton when clicked
-      if (minusIcon.getAttribute('src') == defaultColorMinusIcon){
-        minusIcon.setAttribute('src',activeColorMinusIcon);
       }
-    
-    }
-    target = target.parentNode;
-    } 
-    
-      }
-    
-    function setDefaultIcon(){
+  
+function setDefaultIcon(){
+        //setting default colors for icons
         plusIcon.setAttribute('src', defaultColorPlusIcon);
         minusIcon.setAttribute('src', defaultColorMinusIcon);
       }

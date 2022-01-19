@@ -3,13 +3,13 @@
     margin:0;
 }
 body{
-    background-color: #FAFFFD;
+    background-color: #D1D8EC;
     font-family: sans-serif;
-    overflow-y: scroll;
-    padding-top: 4em;
+    padding-top: 3em;
+    padding-bottom: 3em;
     display: flex;
     justify-content: center;
-   
+    align-content: center;
 }
 .mainDiv{
     background: #D1D8EC;
@@ -21,56 +21,53 @@ body{
     justify-content: center;
     width: 20em;
     height: 40em;
-    margin-left: auto;
 }
-
-em{
-    color:#FA824C ;
-    letter-spacing:0.00000rem;
-    line-height: ;
-}
-.displayer{
+.display{
     text-align: center;
     font-size: 11em;
     color: #031D44;
 }
-.firstTitle{
+.title{
     text-align: center;
-    font-size: 3.5em;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-    color: #5c1d9e;
-   
+    font-size: 5em;
+    color: #6e8cb9;
+    line-height: 3rem;
+    letter-spacing:-0.05em;
 }
-div{
-    margin-left: auto;
-    margin-right: auto;
+em{
+    text-transform: uppercase;
+    color:#FA824C ;
+    font-size:1em ;
+    letter-spacing:-0.025em;
+    font-weight: 8  00;
+}
+.divButtons{
     display: flex;
     flex-direction: row;
     justify-content:space-evenly;
    align-items: center;
-}
-.divButtons{
- display: flex;
- flex-wrap: wrap;
+   padding-bottom: 2em;
 }
 button{
+    background: #D1D8EC;
+    box-shadow:  10px 10px 20px #9095a3,
+             -10px -10px 20px #ecf1f1;    
+    border-color: #D1D8EC;
+}
+.divButtons > button{
     height: 8em;
     width: 8em;
-    border-radius: 2em;
-    background: #D1D8EC;
-    box-shadow:  25px 25px 80px #9095a3,
-             -25px -25px 80px #f7ffff; 
-    margin-right:1.3em;   
-    border-color: #D1D8EC; 
+    border-radius: 2em; 
 }
-
 .resetButton{ 
     height: 4em;
-    margin-top: 2em;
+    border-radius: 1.5em;
+    margin-left: auto;
+    margin-right:auto;
+    width: 10em;
 }
 .resetText{
-    color: #7A688D;
+    color: #FA824C;
     font-size: 1.5em;
 
 }
@@ -80,121 +77,48 @@ button{
 h4{
     padding-top: 3em;
     font-size: 0.8em;
+    text-align: center;
+}
+h4> a{
+    text-decoration-line: none;
+    color: #6e8cb9;
 }
 /*TABLET VERSION*/
 @media (min-width: 768px) { 
     body{
-        background-color: #D1D8EC;
-        font-family: 'Poppins';
-        overflow-y: scroll;
-        padding-top: 4em;
-        display: flex;
-       
+        overflow-y: hidden;
+        padding-bottom: 2em;
     }
     .mainDiv{
-        background: #D1D8EC;
-        box-shadow:  25px 25px 60px #9095a3,
-                 -25px -25px 60px #f7ffff;
-        border-radius: 3em;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 25em;
-        height: 50em;
-        margin-left: auto;
-    }
-    .displayer{
-        text-align: center;
-        font-size: 12em;
-    }
-    .firstTitle{
-        text-align: center;
-        font-size: 2em;
-        padding-top: 0.5em;
-        padding-bottom: 0.5em;
-        color: #2B2118;
-    }
-    .divButtons{
-        margin-left: auto;
-        margin-right: auto;
-        display: flex;
-        flex-direction: row;
-        justify-content:space-between;
-       align-items: center;
-    }
-    button{
-        height: 10em;
-        width: 10em;
-        border-radius: 40px;
-        background: #D1D8EC;
-        box-shadow:  25px 25px 80px #9095a3,
-                 -25px -25px 80px #f7ffff; 
-        margin:3em;     
-    }
-    .resetButton{ 
-        height: 7em;
-    }
-    .resetText{
-        font-family: 'Poppins';
-        color: #CF1259;
-        font-size: 3em;
-    
+        width: 20em;
+        height:35em;   
     }
  }
 
  
 /*DESKTOP VERSION*/ 
 @media (min-width: 1024px) {  
-    .mainPage{
-        height: 45em;
-       margin: auto;
-       width: 30em;
+   body{
+       padding-top: 5em;
+       padding-bottom: 5em;
+   }
+    .mainDiv{
+        width: 25em;
+        height:47em;
     }
-    .firstTitle{
-        text-align: center;
-        font-size: 4em;
-        padding-top: 1em;
-        padding-bottom: 0.5em;
-        color: #2B2118;
-        line-height:1em ;
+    .display{
+        padding-top: 0.2rem;
+        padding-bottom: 0.2rem;
+        font-size: 15em;
     }
-    em{
-        font-family: Arial, Helvetica, sans-serif;
-        letter-spacing: ;
-        font-size: em;
-    }
-    .displayer{
-        font-family: monospace;
-        text-align: center;
-        font-size: 13em;
-    }
-    .divButtons{
-        margin-left: auto;
-        margin-right: auto;
-        display: flex;
-        flex-direction: row;
-        justify-content:space-between;
-       align-items: center;
-    }
-    button{
+    .divButtons> button{
         height: 10em;
         width: 10em;
-        border-radius: 40px;
-        background: #D1D8EC;
-        box-shadow:  25px 25px 80px #9095a3,
-                 -25px -25px 80px #f7ffff; 
-        margin-right:3em;     
     }
-   
-    .resetButton{ 
-        height: 7em;
-        width: 12em;
+    .resetButton{
+        width: 14em;
     }
     .resetText{
-        color: #7A688D;
-        font-size: 2.5em;
-    
+        font-size: 2.2em;
     }
-   
-    
 }
