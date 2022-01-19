@@ -1,5 +1,6 @@
-# Let's keep track
+# Let's count
 
-# What is it about ?
-<em>Let's keep track</em> is an application counter powered by Javascript. 
+## What is it about ?
+*Let's count* is an application counter powered by Javascript. 
 
+## Link to netfly deployment
