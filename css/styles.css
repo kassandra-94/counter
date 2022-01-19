@@ -26,12 +26,15 @@ body{
     text-align: center;
     font-size: 11em;
     color: #031D44;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    letter-spacing: -0.025em;
 }
 .title{
     text-align: center;
-    font-size: 5em;
+    font-size: 4em;
     color: #6e8cb9;
-    line-height: 3rem;
+    line-height: 2.5rem;
     letter-spacing:-0.05em;
 }
 em{
@@ -112,6 +115,11 @@ h4> a{
         padding-top: 0.2rem;
         padding-bottom: 0.2rem;
         font-size: 15em;
+    }
+    .title{
+        font-size: 5em;
+        line-height: 3rem;
+        letter-spacing:-0.05em;
     }
     .divButtons> button{
         height: 10em;
