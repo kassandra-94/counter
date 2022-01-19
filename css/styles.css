@@ -83,6 +83,8 @@ h4> a{
     text-decoration-line: none;
     color: #6e8cb9;
 }
+
+
 /*TABLET VERSION*/
 @media (min-width: 768px) { 
     body{
@@ -99,8 +101,8 @@ h4> a{
 /*DESKTOP VERSION*/ 
 @media (min-width: 1024px) {  
    body{
-       padding-top: 5em;
-       padding-bottom: 5em;
+       padding-top: 2em;
+       padding-bottom: 2em;
    }
     .mainDiv{
         width: 25em;
