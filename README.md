@@ -14,7 +14,7 @@ Check out the <a href="https://lets-count-project.netlify.app">demo </a> provide
 <img src='images/minus_one.png' width=200px>
 </p>
 
-Easy as you can see: + and - buttons raise/decrease the number on the counter; reset button clears the counter and bring it to zero.
+Easy as you can see: clicking + and - buttons raise/decrease the number on the counter; reset button clears the counter and bring it to zero.
 
 ## :hammer: Tech
 - JAVASCRIPT
