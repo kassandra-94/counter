@@ -89,7 +89,7 @@ resetButton.onclick = function(){
    }
 //setting event listeners to parent element of buttons( event delegation)
 //setting event listeners for mobile 
-divButtons.addEventListener('touchstart',changeTheIcon, false);
+divButtons.addEventListener('touchstart',changeTheIcon);
 divButtons.addEventListener('touchend', setDefaultIcon);
 
 
