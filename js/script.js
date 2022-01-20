@@ -91,8 +91,9 @@ resetButton.onclick = function(){
 divButtons.addEventListener('mousedown',changeTheIcon);
 divButtons.addEventListener('mouseup', setDefaultIcon);
 //setting event listeners for mobile 
-divButtons.addEventListener('touchstart',changeTheIcon);
+divButtons.addEventListener('touchstart',changeTheIcon, false);
 divButtons.addEventListener('touchend', setDefaultIcon);
+
 
 function changeTheIcon(event){
   let target = event.target;     
@@ -119,8 +120,8 @@ function changeTheIcon(event){
             }
           //debug for nested elements
       target = target.parentNode;
-    }
-      }
+  }
+}
   
 function setDefaultIcon(){
         //setting default colors for icons
