@@ -19,5 +19,5 @@ Check out the <a href="https://www.google.com" target="_blank">demo </a> on Netl
 - HTML
 - CSS
 ## :telephone_receiver: Contact
-Reach me filling this [form](https://kassandra-94.github.io/docs/contact.html).
+Drop a line [here](https://kassandra-94.github.io/docs/contact.html).
 
