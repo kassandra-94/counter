@@ -23,3 +23,4 @@ Easy as you can see: + and - buttons raise/decrease the number on the counter; r
 ## :telephone_receiver: Contact
  Just drop a line [here](https://kassandra-94.github.io/docs/contact.html).
 
+:wave:
