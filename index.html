@@ -8,6 +8,20 @@
     <link type="text/css"  rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-    <script type="text/javascript" src="/js/script.js" > </script>
+    <script > 
+
+        if (navigator.maxTouchPoints > 1){
+            let scriptMobile = document.createElement('script');
+            scriptMobile.src= '/js/script_mobile.js';
+            scriptMobile.setAttribute("type","text/javascript");
+            document.head.appendChild(scriptMobile);
+        }else {
+            let script = document.createElement('script');
+            script.src ="/js/script.js";
+            script.setAttribute("type","text/javascript");
+            document.head.appendChild(script);
+        }
+    
+    </script>
 </body>
 </html>
