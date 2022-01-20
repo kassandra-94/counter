@@ -88,10 +88,10 @@ resetButton.onclick = function(){
  }
    }
 //setting event listeners to parent element of buttons( event delegation)
-divButtons.addEventListener('mousedown',changeTheIcon);
+divButtons.addEventListener('mousedown',changeIconAndNumber);
 divButtons.addEventListener('mouseup', setDefaultIcon);
 
-function changeTheIcon(event){
+function changeIconAndNumber(event){
   let target = event.target;     
      
     while (target != divButtons){
