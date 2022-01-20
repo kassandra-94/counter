@@ -9,15 +9,17 @@ _Let's count_ is an application counter, suitable also for mobile.
 Check out the <a href="https://www.google.com" target="_blank">demo </a> on Netlify.
 
 <p float=left>
-<img src='images/plus_one.png' width=200px>
+<img src='images/plus_one.png' width=200px style="padding-right:10px">
 <img src='images/zero.png' width=200px>
 <img src='images/minus_one.png' width=200px>
 </p>
+
+Easy as you can see: + and - buttons raise/decrease the number on the counter; reset button clears the counter and bring it to zero.
 
 ## :hammer: Tech
 - JAVASCRIPT
 - HTML
 - CSS
 ## :telephone_receiver: Contact
-Drop a line [here](https://kassandra-94.github.io/docs/contact.html).
+ Judt drop a line [here](https://kassandra-94.github.io/docs/contact.html).
 
