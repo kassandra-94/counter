@@ -29,6 +29,6 @@ Easy as you can see: clicking + and - buttons raise/decrease the number on the c
 
 
 ## :telephone_receiver: Contact
- Just drop a line [here](https://kassandra-94.github.io/docs/contact.html) and let me know what do you think.
+ Just drop a line [here](https://kassandra-94.github.io/docs/contact.html) and let me know what do you think. :wave:
 
-:wave:
+
