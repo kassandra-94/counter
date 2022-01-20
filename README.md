@@ -6,7 +6,7 @@
 _Let's count_ is an application counter, suitable also for mobile. 
 
 ## :mag: Usage 
-Check out the <a href="https://www.google.com" target="_blank">demo </a> on Netlify.
+Check out the <a href="https://lets-count-project.netlify.app">demo </a> provided by Netlify.
 
 <p float=left>
 <img src='images/plus_one.png' width=200px style="padding-right:10px">
