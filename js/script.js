@@ -77,6 +77,16 @@ minusButton.appendChild(minusIcon);
 resetButton.appendChild(resetText);
 
 
+ // checking the user's device is touchscreen or not, and directing to the right script
+if (navigator.maxTouchPoints > 1){
+             divButtons.addEventListener('touchstart',changeIconAndNumber);
+                divButtons.addEventListener('touchend', setDefaultIcon);
+        }else {
+            divButtons.addEventListener('mousedown',changeIconAndNumber);
+            divButtons.addEventListener('mouseup', setDefaultIcon);
+        }
+
+
 //SETTING FUNCTIONS
 //set click event on reset button  
 resetButton.onclick = function(){
@@ -87,41 +97,37 @@ resetButton.onclick = function(){
   alert('That was close.');
  }
    }
-//setting event listeners to parent element of buttons( event delegation)
-divButtons.addEventListener('mousedown',changeIconAndNumber);
-divButtons.addEventListener('mouseup', setDefaultIcon);
-
-function changeIconAndNumber(event){
-  let target = event.target;     
-     
-    while (target != divButtons){
-      if (target.className == 'plusButton'){
-          //raise number on display
-          if( display.innerText==0 || display.innerText <= -1 || display.innerText>= 1) { 
-              display.innerText++;
-              }
-          //change color icon of plusButton when clicked
-          if ( plusIcon.getAttribute('src') == defaultColorPlusIcon){
-              plusIcon.setAttribute('src', activeColorPlusIcon);
-              } 
-      } else if (target.className == 'minusButton'){
-          //decrese number on display
-          if(display.innerText== 0 || display.innerText <= -1 || display.innerText>= 1){
-          display.innerText--;
-              }
-          //change color icon of mminusButton when clicked
-          if (minusIcon.getAttribute('src') == defaultColorMinusIcon){
-          minusIcon.setAttribute('src',activeColorMinusIcon);
-              }
+        
+  function changeIconAndNumber(event){
+    let target = event.target;     
+         while (target != divButtons){
+                 if (target.className == 'plusButton'){
+                    //raise number on display
+                     if( display.innerText==0 || display.innerText <= -1 || display.innerText>= 1) { 
+                        display.innerText++;
+                        }
+                    //change color icon of plusButton when clicked
+                     if ( plusIcon.getAttribute('src') == defaultColorPlusIcon){
+                        plusIcon.setAttribute('src', activeColorPlusIcon);
+                        } 
+                } else if (target.className == 'minusButton'){
+                    //decrese number on display
+                    if(display.innerText== 0 || display.innerText <= -1 || display.innerText>= 1){
+                    display.innerText--;
+                        }
+                    //change color icon of mminusButton when clicked
+                    if (minusIcon.getAttribute('src') == defaultColorMinusIcon){
+                    minusIcon.setAttribute('src',activeColorMinusIcon);
+                        }
+                      }
+                    //debug for nested elements
+                target = target.parentNode;
             }
-          //debug for nested elements
-      target = target.parentNode;
-  }
-}
-  
-function setDefaultIcon(){
-        //setting default colors for icons
-        plusIcon.setAttribute('src', defaultColorPlusIcon);
-        minusIcon.setAttribute('src', defaultColorMinusIcon);
-      }
-    
+          }
+            
+       function setDefaultIcon(){
+            //setting default colors for icons
+          plusIcon.setAttribute('src', defaultColorPlusIcon);
+           minusIcon.setAttribute('src', defaultColorMinusIcon);
+                }
+              
