@@ -19,7 +19,7 @@ _Let's count_ is an application counter, suitable also for mobile.
 <img src='images/minus_one.png' width=200px>
 </p>
 
-Easy as you can see: clicking + and - buttons raise/decrease the number on the counter; reset button clears the counter and bring it to zero.
+Easy as you can see: clicking + and - buttons raise/decrease the number on the counter; reset button clears the counter and brings it to zero.
 
 
 ## :hammer: Tech
