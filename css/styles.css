@@ -60,6 +60,14 @@ button {
   width: 8em;
   border-radius: 2em;
 }
+.plusButton {
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.minusButton {
+  background-repeat: no-repeat;
+  background-position: center;
+}
 .resetButton {
   height: 4em;
   border-radius: 1.5em;
@@ -119,14 +127,6 @@ h4 > a {
   .divButtons > button {
     height: 10em;
     width: 10em;
-  }
-  .plusButton {
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-  .minusButton {
-    background-repeat: no-repeat;
-    background-position: center;
   }
   .resetButton {
     width: 14em;
