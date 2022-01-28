@@ -75,7 +75,6 @@ divButtons.appendChild(plusButton);
 resetButton.appendChild(resetText);
 
 // checking the user's device is touchscreen or not, and directing to the right script
-
 if (navigator.maxTouchPoints > 1) {
   plusButton.addEventListener("touchstart", function () {
     addNumberToCounter(1);
