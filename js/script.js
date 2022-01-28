@@ -2,7 +2,7 @@
 // shortcuts to document.body
 const body = document.body;
 
-//1) CREATION OF ELEMENT
+//1) CREATION OF ELEMENTS
 //creation mainDiv
 const mainDiv = document.createElement("div");
 mainDiv.className = "mainDiv";
@@ -109,7 +109,7 @@ if (navigator.maxTouchPoints > 1) {
   resetButton.addEventListener("click", resetCounter);
 }
 
-//SETTING FUNCTIONS
+//3) SETTING FUNCTIONS
 
 function resetCounter() {
   let userChoice = confirm("Are you sure? There's no going back.");
